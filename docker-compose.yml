@@ -1,26 +1,26 @@
 version: '3.8'
 services:
-  postgresql:
+  postgresqll:
     image: "postgres"
-    container_name: "postgresql"
+    container_name: "postgresqll"
     environment:
-      - POSTGRES_PASSWORD= ${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes: 
       - postgres_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
   graphqlbackend12:
-    image: "mygraphqlbackend"
+    image: "graphqlbackend"
     container_name: graphqlbackend12
     environment: 
-      - DATABASE_URL= ${DATABASE_URL}
+      - DATABASE_URL=${DATABASE_URL}
       - PORT= ${PORT}
-      - JWT_SECRET= ${JWT_SECRET}
+      - JWT_SECRET=${JWT_SECRET}
     ports:
       - 8000:8000
     depends_on:
-      - "postgresql"
+      - "postgresqll"
 
 volumes:
   postgres_data:

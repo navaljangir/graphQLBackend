@@ -9,4 +9,4 @@ COPY . .
 RUN npm run db:generate
 EXPOSE 8000
 
-CMD ["npm", "run" , "dev"]
+CMD ["sh","-c","npx prisma migrate deploy && npm run dev"]

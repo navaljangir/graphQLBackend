@@ -61,7 +61,7 @@ Once the application is running, you can access the GraphQL API at:
 http://localhost:8000
 ```
 
-Replace `<PORT>` with the port defined in the `docker-compose.yml` file (default is usually `8000`).
+Replace `<PORT>` with the port defined in the `docker-compose.yml` file.
 
 ## Files Included
 
